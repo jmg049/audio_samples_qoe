@@ -1,5 +1,9 @@
 <div align="center">
-# audio-samples-qoe
+
+# AudioSamples QoE
+
+## Quality of Experience Metrics on AudioSamples
+
 
 <img src="https://raw.githubusercontent.com/jmg049/audio_samples_qoe/main/logo.png" title="AudioSamples Logo -- Ferrous' Mustachioed Cousin From East Berlin, Eisenhaltig" width="200"/>
 

@@ -12,6 +12,11 @@ readme = "README.md"
 keywords = ["audio", "quality", "visqol", "mos", "dsp"]
 categories = ["multimedia::audio", "science"]
 
+[lib]
+# `cdylib` produces the Python extension module (built via maturin behind the
+# `python` feature); `rlib` is the normal Rust library used by tests/benches.
+crate-type = ["cdylib", "rlib"]
+
 [dependencies]
 audio_samples = { version = "1.0.13", default-features = false, features = ["transforms", "vad", "statistics", "processing", "resampling", "editing", "envelopes", "channels"] }
 audio_samples_io = { version = "0.3.2", features = ["wav", "flac"] }
@@ -25,9 +30,14 @@ thiserror = "2.0.18"
 ort = { version = "=2.0.0-rc.12", optional = true }
 ureq = { version = "3.3.0", optional = true }
 
+# Python bindings — gated behind the `python` feature, enabled by maturin.
+pyo3 = { version = "0.28", optional = true, features = ["extension-module", "abi3-py310"] }
+numpy = { version = "0.28", optional = true }
+
 [features]
 default = []
 scoreq = ["dep:ort", "dep:ureq"]
+python = ["dep:pyo3", "dep:numpy"]
 
 [dev-dependencies]
 criterion = { version = "0.8.2", features = ["html_reports"] }
@@ -42,3 +52,6 @@ harness = false
 
 [[example]]
 name = "eval_datasets"
+
+[profile.release]
+lto = true

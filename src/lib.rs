@@ -1,4 +1,6 @@
 mod error;
+#[cfg(feature = "python")]
+mod python;
 #[cfg(feature = "scoreq")]
 mod scoreq;
 mod utils;

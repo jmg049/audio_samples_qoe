@@ -1,4 +1,16 @@
-# audio_samples_qoe
+<div align="center">
+
+# AudioSamples QoE
+
+## Quality of Experience Metrics on AudioSamples
+
+<img src="logo.png" title="AudioSamples Logo -- Ferrous' Mustachioed Cousin From East Berlin, Eisenhaltig" width="200"/>
+
+[![Crates.io][crate-img]][crate] [![Docs.rs][docs-img]][docs]
+[![PyPI][pypi-img]][pypi] [![Python Docs][pydocs-img]][pydocs]
+[![MSRV][msrv-img]][msrv] [![License: MIT][license-img]][license]
+
+</div>
 
 Perceptual audio quality metrics in pure Rust, with Python bindings.
 
@@ -86,6 +98,27 @@ See [`python/README.md`](python/README.md) and the
 | `audio`  | 48 kHz (resampled)      | 32, up to Nyquist  | Support vector regression | All patches          |
 | `speech` | Reference's native rate | 21, ≤ 8 kHz        | Exponential NSIM fit      | Voice-activity gated |
 
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## License
 
 MIT
+
+[crate]: https://crates.io/crates/audio_samples_qoe
+[crate-img]: https://img.shields.io/crates/v/audio_samples_qoe?style=for-the-badge&color=009E73&label=crates.io
+[docs]: https://docs.rs/audio_samples_qoe
+[docs-img]: https://img.shields.io/badge/docs.rs-online-009E73?style=for-the-badge&labelColor=gray
+[pypi]: https://pypi.org/project/audio-samples-qoe/
+[pypi-img]: https://img.shields.io/pypi/v/audio-samples-qoe?style=for-the-badge&color=009E73&label=pypi
+[pydocs]: https://jmg049.github.io/audio_samples_qoe/
+[pydocs-img]: https://img.shields.io/badge/python%20docs-online-009E73?style=for-the-badge&labelColor=gray
+[msrv]: https://blog.rust-lang.org/2025/05/15/Rust-1.87.0/
+[msrv-img]: https://img.shields.io/badge/MSRV-1.87%2B-009E73?style=for-the-badge&labelColor=gray
+[license-img]: https://img.shields.io/crates/l/audio_samples_qoe?style=for-the-badge&label=license&labelColor=gray
+[license]: https://github.com/jmg049/audio_samples_qoe/blob/main/LICENSE

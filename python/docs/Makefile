@@ -1,19 +1,20 @@
-SPHINXBUILD = uv run --group docs sphinx-build
-SOURCEDIR   = .
-BUILDDIR    = _build
+# Minimal makefile for Sphinx documentation
+#
 
-.PHONY: help html clean livehtml
+# You can set these variables from the command line, and also
+# from the environment for the first two.
+SPHINXOPTS    ?=
+SPHINXBUILD   ?= sphinx-build
+SOURCEDIR     = source
+BUILDDIR      = build
 
+# Put it first so that "make" without argument is like "make help".
 help:
-	@$(SPHINXBUILD) -M help $(SOURCEDIR) $(BUILDDIR)
+	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-html:
-	$(SPHINXBUILD) -b html $(SOURCEDIR) $(BUILDDIR)/html -W --keep-going
-	@echo "Build finished. Open $(BUILDDIR)/html/index.html"
+.PHONY: help Makefile
 
-clean:
-	rm -rf $(BUILDDIR)
-
-# Live-reload server (requires sphinx-autobuild: uv add --group docs sphinx-autobuild)
-livehtml:
-	uv run --group docs sphinx-autobuild $(SOURCEDIR) $(BUILDDIR)/html
+# Catch-all target: route all unknown targets to Sphinx using the new
+# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
+%: Makefile
+	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)

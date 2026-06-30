@@ -1,20 +1,22 @@
-//! Python bindings for the `audio_samples_qoe` ViSQOL implementation.
+//! Python bindings for `audio_samples_qoe`.
 //!
-//! Exposed as the private extension module `audio_samples_qoe._native`. The
-//! public, documented, typed API lives in the `audio_samples_qoe` Python
-//! package next to this crate — it dispatches paths and
-//! `audio_samples.AudioSamples` objects down to `_score`.
+//! Compiled into the private extension module `audio_samples_qoe._native`
+//! (gated behind the `python` Cargo feature). The public, documented, typed
+//! API lives in the `audio_samples_qoe` Python package next to this crate —
+//! it dispatches paths and `audio_samples.AudioSamples` objects down to the
+//! `_score` and `_read` functions defined here.
 
 use std::num::NonZeroU32;
 use std::path::PathBuf;
 
 use audio_samples::{AudioData, AudioSamples};
-use audio_samples_qoe::{AudioQoEError, AudioSamplesQoE, VisqolOptions};
 use ndarray::{ArrayViewD, Ix1, Ix2};
 use numpy::{AllowTypeChange, IntoPyArray, PyArrayLikeDyn};
 use pyo3::create_exception;
 use pyo3::exceptions::{PyException, PyIOError, PyValueError};
 use pyo3::prelude::*;
+
+use crate::{AudioQoEError, AudioSamplesQoE, VisqolOptions};
 
 create_exception!(
     _native,

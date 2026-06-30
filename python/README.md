@@ -15,10 +15,10 @@ both audio and speech mode. Part of the
 pip install audio-samples-qoe
 ```
 
-Or build from source (requires Rust and [maturin](https://maturin.rs)):
+Or build from source (requires Rust and [maturin](https://maturin.rs)), run
+from the repository root:
 
 ```sh
-cd python
 maturin develop --release
 ```
 

@@ -4,7 +4,7 @@
 
 ## Quality of Experience Metrics on AudioSamples
 
-<img src="logo.png" title="AudioSamples Logo -- Ferrous' Mustachioed Cousin From East Berlin, Eisenhaltig" width="200"/>
+<img src="https://raw.githubusercontent.com/jmg049/audio_samples_qoe/main/logo.png" title="AudioSamples Logo -- Ferrous' Mustachioed Cousin From East Berlin, Eisenhaltig" width="200"/>
 
 [![Crates.io][crate-img]][crate] [![Docs.rs][docs-img]][docs]
 [![PyPI][pypi-img]][pypi] [![Python Docs][pydocs-img]][pydocs]

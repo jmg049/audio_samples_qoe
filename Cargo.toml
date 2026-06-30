@@ -12,6 +12,19 @@ readme = "README.md"
 keywords = ["audio", "quality", "visqol", "mos", "dsp"]
 categories = ["multimedia::audio", "science"]
 
+# Keep the published package lean: drop dev/eval scaffolding that crate users
+# never need (notebooks alone are ~450 KiB). The compiled `python` feature lives
+# in src/, so excluding the Python repo extras does not affect the build.
+exclude = [
+    "python/notebooks/",
+    "python/docs/",
+    "python/examples/",
+    "python/tests/",
+    "benches/compare_cpp.sh",
+    ".github/",
+    ".python-version",
+]
+
 [lib]
 crate-type = ["cdylib", "rlib"]
 

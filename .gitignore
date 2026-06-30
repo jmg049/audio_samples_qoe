@@ -1,0 +1,17 @@
+/target
+/python/target
+/python/.venv
+/python/Cargo.lock
+__pycache__/
+*.egg-info/
+
+# Vendored reference implementations (their own git repos)
+/scoreq
+/visqol
+python/docs/_build/
+
+*.pyc
+*.so
+/results/
+python/notebooks/*.png
+*.lock
